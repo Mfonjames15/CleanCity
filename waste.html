@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean City</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="imape/png" href="./assets/images/istockphoto-1384532150-612x612.jpg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a7a188b016.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .accordion-item img{
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+    }
+    .hero-section {
+  position: relative; /* Important so ::before works correctly */
+  background-image: url('./assets/images/waste-cat-hero.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* Dark overlay */
+  z-index: 1; 
+}
+
+.hero-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+.text-overlay h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* Extra clarity */
+}
+
+.text-overlay p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+    body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.6;
+    }
+    .navbar-nav .nav-link.active {
+      color: #0bac81ff !important;
+      font-weight: 600;
+      border-bottom: 2px solid #0bac81ff;
+    }
+    .navbar-brand img{
+      width: 100px;
+    }
+    #collapsibleNavbar .navbar-nav .nav-item .nav-link {
+      margin: 0 12px;
+      transition: all 0.4s ease;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 sticky-top">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <img src="./assets/images/logo.png" alt="Logo" class="logo-img">
+        <div class="brand-text">
+          <p class="brand-title mb-0">CLEAN CITY</p>
+          <p class="brand-text fs-6 text-muted mb-0">Waste Management Tracker</p>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a href="./home.html" class="nav-link">HOME</a></li>
+          <li class="nav-item"><a href="./waste.html" class="nav-link active">WASTE CATEGORIES</a></li>
+          <li class="nav-item"><a href="./tracker.html" class="nav-link">RECYCLING TRACKER</a></li>
+          <li class="nav-item"><a href="./pledge.html" class="nav-link">PLEDGE</a></li>
+        </ul>
+        <a href="#" class="btn btn-custom btn-success" data-bs-toggle="modal" data-bs-target="#signUp-modal">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="d-flex hero-section flex-column justify-content-center align-items-center mb-5 text-light min-vh-100">
+    <div class="container text-overlay text-center">
+      <h2>Sort Smarter, Live Cleaner</h2>
+      <p>Learn about the different categories of waste and how to dispose of them responsibly</p>
+      <a href="#waste-categories" class="btn btn-success text-white p-3 fs-6">Explore Waste Categories</a>
+    </div>
+  </section>
+
+  <!-- Waste Steps -->
+<section class="py-5 my-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">The 5 Steps of Waste Management</h2>
+    <p class="mb-5 text-muted">Follow the waste hierarchy—from reducing waste to responsible disposal—to build a cleaner, greener future.</p>
+    
+    <div class="row justify-content-center g-4">
+      
+      <!-- Reduce -->
+      <div class="col-md">
+        <div class="step-card card h-100 p-3 bg-white rounded-3 shadow-sm d-flex align-items-start hover-card">
+          <i class="fas fa-ban fs-2 text-danger me-3 mb-3"></i>
+          <div class="text-start">
+            <h6 class="fw-bold mb-1">Reduce</h6>
+            <p class="small mb-0">Avoid waste by buying only what you need.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reuse -->
+      <div class="col-md">
+        <div class="step-card card h-100 p-3 bg-white rounded-3 shadow-sm d-flex align-items-start hover-card">
+          <i class="fas fa-redo fs-2 text-primary mb-3 me-3"></i>
+          <div class="text-start">
+            <h6 class="fw-bold mb-1">Reuse</h6>
+            <p class="small mb-0">Find new uses for items instead of throwing them away.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recycle -->
+      <div class="col-md">
+        <div class="step-card card h-100 p-3 bg-white rounded-3 shadow-sm d-flex align-items-start hover-card">
+          <i class="fas fa-recycle fs-2 text-success mb-3 me-3"></i>
+          <div class="text-start">
+            <h6 class="fw-bold mb-1">Recycle</h6>
+            <p class="small mb-0">Process waste into new products and materials.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recover -->
+      <div class="col-md">
+        <div class="step-card card h-100 p-3 bg-white rounded-3 shadow-sm d-flex align-items-start hover-card">
+          <i class="fas fa-burn fs-2 text-warning mb-3 me-3"></i>
+          <div class="text-start">
+            <h6 class="fw-bold mb-1">Recover</h6>
+            <p class="small mb-0">Convert waste into energy through safe methods.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dispose -->
+      <div class="col-md">
+        <div class="step-card card h-100 p-3 bg-white rounded-3 shadow-sm d-flex align-items-start hover-card">
+          <i class="fas fa-trash fs-2 text-secondary mb-3 me-3"></i>
+          <div class="text-start">
+            <h6 class="fw-bold mb-1">Dispose</h6>
+            <p class="small mb-0">As a last resort, send waste to landfills safely.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Waste Management Insights  -->
+  <section class="py-5 my-5 bg-light min-vh-100">
+  <div class="container">
+    <div class="row">
+      <!-- Left Large Image -->
+      <div class="col-md-7 mb-4 mb-md-0">
+        <img src="./assets/images/waste-categories-page.jpg"
+        alt="Recycling bins" class="img-fluid rounded shadow">
+      </div>
+
+      <!-- Right Blog List -->
+      <div class="col-md-5">
+        <h2 class="fw-bold mb-4">Waste Management Insights</h2>
+
+        <!-- Blog 1 -->
+        <div class="d-flex mb-4 pb-4 border-bottom">
+          <img src="./assets/images/sorting-waste.jpg"
+               alt="Sorting Waste" class="flex-shrink-0 me-3 rounded" style="width:100px; height:70px; object-fit:cover;">
+          <div>
+            <p class="mb-1 fw-semibold">Why Sorting Your Waste Properly Matters</p>
+            <small class="text-muted">Discover how proper segregation helps recycling and reduces landfill overflow.</small>
+          </div>
+        </div>
+
+        <!-- Blog 2 -->
+        <div class="d-flex mb-4 pb-4 border-bottom">
+          <img src="./assets/images/recycling-mistake.jpg"
+               alt="Recycling Mistakes" class="flex-shrink-0 me-3 rounded" style="width:100px; height:70px; object-fit:cover;">
+          <div>
+            <p class="mb-1 fw-semibold">Top 5 Mistakes People Make When Recycling</p>
+            <small class="text-muted">Learn the common errors such as mixing plastics with paper or leaving containers dirty.</small>
+          </div>
+        </div>
+
+        <!-- Blog 3 -->
+        <div class="d-flex">
+          <img src="./assets/images/waste-energy.jpg"
+               alt="Composting" class="flex-shrink-0 me-3 rounded" style="width:100px; height:70px; object-fit:cover;">
+          <div>
+            <p class="mb-1 fw-semibold">Turning Food Waste into Energy</p>
+            <small class="text-muted">See how composting and biogas systems transform waste into renewable energy.</small>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Waste Categories  -->
+<section id="waste-categories">
+  <div class="container my-5">
+    <div class="row align-items-start">
+      
+      <!-- LEFT CONTENT -->
+      <div class="col-md-5 mb-4 mb-md-0">
+        <div class="waste-category">
+          <div class="heading d-flex justify-content-between align-items-center mb-3">
+            <h2 class="fw-bold mb-4">Waste Categories</h2>
+          </div>
+          
+          <p class="text-start lh-lg">
+            Not all waste is the same—some can be recycled, reused, or composted, while others require careful handling.</p>
+            <p> Waste comes in many forms, each with unique challenges and impacts on the environment. Understanding these categories is the first step toward responsible disposal and sustainable living.
+            </p> 
+            <p>This section highlights the main types of waste you generate daily—plastics, food scraps, electronics, paper, and glass—and provides practical tips to reduce pollution, conserve resources, and build a greener future.</p>
+          </p>
+         <button id="random-facts" type="button" 
+              class="btn btn-success btn-sm" 
+              data-bs-toggle="modal" 
+              data-bs-target="#factsModal">
+              Random facts
+            </button>
+        </div>
+      </div>
+
+      <!-- RIGHT: ACCORDION -->
+      <div class="col-md-7">
+        <div class="accordion" id="wasteAccordion">
+          
+          <!-- Plastic -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button collapsed d-flex align-items-center" 
+                      type="button" data-bs-toggle="collapse" 
+                      data-bs-target="#collapsePlastic" 
+                      aria-expanded="false" aria-controls="collapsePlastic">
+                <img src="./assets/images/plastic-recycling.webp" 
+                     class="me-3 rounded-circle" alt="Plastic" width="40" height="40">
+                <span class="fs-6 fw-bold">Plastic</span>
+              </button>
+            </h2>
+            <div id="collapsePlastic" class="accordion-collapse collapse" 
+                 data-bs-parent="#wasteAccordion" aria-labelledby="headingOne">
+              <div class="accordion-body waste-body">
+                <!-- Details -->
+                <div class="mb-4">
+                  <h5 class="fw-bold text-success">♻️ Details</h5>
+                  <ul class="ps-3">
+                    <li>Plastics are synthetic materials made from petroleum.</li>
+                    <li>Includes bottles, bags, straws, packaging, and containers.</li>
+                    <li>Take centuries to decompose.</li>
+                    <li>Microplastics contaminate soil, rivers, and food chain.</li>
+                  </ul>
+                </div>
+                <!-- Tips -->
+                <div>
+                  <h5 class="fw-bold text-success">Tips for Responsible Disposal</h5>
+                  <ul class="ps-3">
+                    <li>Rinse containers before recycling.</li>
+                    <li>Reuse bags and containers.</li>
+                    <li>Avoid single-use plastics.</li>
+                    <li>Carry reusable bags for shopping.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Organic Waste -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed d-flex align-items-center" 
+                      type="button" data-bs-toggle="collapse" 
+                      data-bs-target="#collapseOrganic" 
+                      aria-expanded="false" aria-controls="collapseOrganic">
+                <img src="./assets/images/organic-waste.jpg" 
+                     class="me-3 rounded-circle" alt="Organic Waste" width="40" height="40">
+                <span class="fs-6 fw-bold">Organic Waste</span>
+              </button>
+            </h2>
+            <div id="collapseOrganic" class="accordion-collapse collapse" 
+                 data-bs-parent="#wasteAccordion" aria-labelledby="headingTwo">
+              <div class="accordion-body waste-body">
+                <div class="mb-4">
+                  <h5 class="text-success fw-bold">♻️ Details</h5>
+                  <ul class="ps-3">
+                    <li>Biodegradable waste like food scraps, fruit peels, and garden trimmings.</li>
+                    <li>Produces methane in landfills, contributing to climate change.</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 class="text-success fw-bold">Tips</h5>
+                  <ul class="ps-3">
+                    <li>Compost at home to create nutrient-rich soil.</li>
+                    <li>Keep organics separate from plastics/metals.</li>
+                    <li>Promote community composting initiatives.</li>
+                    <li>Avoid sending food scraps to landfills.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- E-Waste -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed d-flex align-items-center" 
+                      type="button" data-bs-toggle="collapse" 
+                      data-bs-target="#collapseEwaste" 
+                      aria-expanded="false" aria-controls="collapseEwaste">
+                <img src="./assets/images/tracking.jpg" 
+                     class="me-3 rounded-circle" alt="E-waste" width="40" height="40">
+                <span class="fs-6 fw-bold">E-waste</span>
+              </button>
+            </h2>
+            <div id="collapseEwaste" class="accordion-collapse collapse" 
+                 data-bs-parent="#wasteAccordion" aria-labelledby="headingThree">
+              <div class="accordion-body waste-body">
+                <div class="mb-4">
+                  <h5 class="text-success fw-bold">♻️ Details</h5>
+                  <ul class="ps-3">
+                    <li>Includes old/broken electronics like phones, computers, TVs, and batteries.</li>
+                    <li>Contains hazardous materials like lead, mercury, cadmium.</li>
+                    <li>Also holds valuable metals like gold, copper, silver.</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 class="text-success fw-bold">Tips for Responsible Disposal</h5>
+                  <ul class="ps-3">
+                    <li>Never throw e-waste in regular trash bins.</li>
+                    <li>Use certified recycling centers.</li>
+                    <li>Donate functional electronics to schools/charities.</li>
+                    <li>Wipe personal data before donating/recycling.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paper -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed d-flex align-items-center" 
+                      type="button" data-bs-toggle="collapse" 
+                      data-bs-target="#collapsePaper" 
+                      aria-expanded="false" aria-controls="collapsePaper">
+                <img src="./assets/images/paper-recycling.jpg" 
+                     class="me-3 rounded-circle" alt="Paper" width="40" height="40">
+                <span class="fs-6 fw-bold">Paper</span>
+              </button>
+            </h2>
+            <div id="collapsePaper" class="accordion-collapse collapse" 
+                 data-bs-parent="#wasteAccordion" aria-labelledby="headingFour">
+              <div class="accordion-body waste-body">
+                <h5 class="fw-bold text-success">♻️ Details</h5>
+                <ul class="ps-3">
+                  <li>Includes newspapers, magazines, office documents, cardboard, and packaging.</li>
+                  <li>Excessive use contributes to deforestation and landfill overflow.</li>
+                </ul>
+                <h5 class="fw-bold text-success mt-3">Tips</h5>
+                <ul class="ps-3">
+                  <li>Reuse paper and print on both sides.</li>
+                  <li>Flatten cardboard boxes before recycling.</li>
+                  <li>Keep paper clean and dry.</li>
+                  <li>Use digital alternatives when possible.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Glass -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed d-flex align-items-center" 
+                      type="button" data-bs-toggle="collapse" 
+                      data-bs-target="#collapseGlass" 
+                      aria-expanded="false" aria-controls="collapseGlass">
+                <img src="./assets/images/glass-recycling.jpg" 
+                     class="me-3 rounded-circle" alt="Glass" width="40" height="40">
+                <span class="fs-6 fw-bold">Glass</span>
+              </button>
+            </h2>
+            <div id="collapseGlass" class="accordion-collapse collapse" 
+                 data-bs-parent="#wasteAccordion" aria-labelledby="headingFive">
+              <div class="accordion-body waste-body">
+                <h5 class="fw-bold text-success">♻️ Details</h5>
+                <ul class="ps-3">
+                  <li>Comes from bottles, jars, and containers.</li>
+                  <li>100% recyclable without losing quality.</li>
+                  <li>Mixing with ceramics or bulbs contaminates recycling.</li>
+                </ul>
+                <h5 class="fw-bold text-success mt-3">Tips</h5>
+                <ul class="ps-3">
+                  <li>Rinse bottles/jars before recycling.</li>
+                  <li>Separate clear and colored glass if required.</li>
+                  <li>Keep glass dry and clean.</li>
+                  <li>Choose reusable glass containers.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- END RIGHT -->
+    </div>
+  </div>
+</section>
+
+<!-- Pledge Call-to-Action -->
+<section class="my-5">
+  <div class="container text-center bg-success text-white py-5 rounded-4 shadow-lg">
+    <h4 class="fw-bold mb-3">Join CleanCity Today</h4>
+    <p class="lead mb-4">Take a stand for responsible waste disposal and be part of the change.</p>
+    <a href="./pledge.html" class="btn btn-light px-4 shadow-sm">
+      Make Your Pledge
+    </a>
+  </div>
+</section>
+
+
+<!-- Modal section (Random Facts) -->
+<div class="modal fade" id="factsModal">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+       <div class="modal-header">
+          <h4 class="modal-title">Random Facts About Waste</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+       </div>
+       
+       <!-- Modal Body-->
+        <div class="modal-body">
+          <p id="facts"></p>
+        </div>
+
+        <!-- Modal Footer-->
+        <div class="modal-footer">
+          <button id="new-fact" type="button" class="btn btn-outline-success">New Fact</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SIGN-UP MODAL -->
+<div class="modal fade" id="signUp-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow">
+
+      <!-- Modal Header -->
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold text-white">Create Account</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body px-4 pb-4">
+        <div class="text-center mb-4">
+          <i class="fa-solid fa-seedling fa-3x text-success mb-2"></i>
+          <h2 class="fw-bold">Register</h2>
+          <p class="text-muted small">Join Clean City and start tracking waste responsibly</p>
+        </div>
+
+        <!-- Sign Up Form -->
+        <form>
+          <div class="mb-3">
+            <label for="signup-name" class="form-label fw-semibold">Full Name</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light"><i class="fa-solid fa-user text-success"></i></span>
+              <input type="text" id="signup-name" class="form-control" placeholder="Enter your name" required>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="signup-email" class="form-label fw-semibold">Email</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light"><i class="fa-solid fa-envelope text-success"></i></span>
+              <input type="email" id="signup-email" class="form-control" placeholder="Enter your email" required>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="signup-password" class="form-label fw-semibold">Password</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light"><i class="fa-solid fa-lock text-success"></i></span>
+              <input type="password" id="signup-password" class="form-control" placeholder="Enter password" required>
+            </div>
+          </div>
+
+          <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="signup-remember">
+            <label class="form-check-label small text-muted" for="signup-remember">Remember me</label>
+          </div>
+
+          <button type="submit" class="btn btn-success w-100 py-2 fw-semibold rounded-3">Sign Up</button>
+        </form>
+
+        <!-- Login Redirect -->
+        <div class="text-center mt-3">
+          <span class="small">Already have an account? 
+            <a href="#" data-bs-toggle="modal" data-bs-target="#login-modal" class="text-success fw-semibold">Log in</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal fade" id="login-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow">
+
+      <!-- Modal Header -->
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold text-white">Welcome Back</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body px-4 pb-4">
+        <div class="text-center mb-4">
+          <i class="fa-solid fa-recycle fa-3x text-success mb-2"></i>
+          <h2 class="fw-bold">Log In</h2>
+          <p class="text-muted small">Access your Clean City account</p>
+        </div>
+
+        <!-- Login Form -->
+        <form>
+          <div class="mb-3">
+            <label for="login-email" class="form-label fw-semibold">Email</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light"><i class="fa-solid fa-envelope text-success"></i></span>
+              <input type="email" id="login-email" class="form-control" placeholder="Enter your email">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="login-password" class="form-label fw-semibold">Password</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light"><i class="fa-solid fa-lock text-success"></i></span>
+              <input type="password" id="login-password" class="form-control" placeholder="Enter password">
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="login-remember">
+              <label class="form-check-label small text-muted" for="login-remember">Remember me</label>
+            </div>
+            <a href="#" class="small text-success fw-semibold">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-success w-100 py-2 fw-semibold rounded-3">Log In</button>
+        </form>
+
+        <!-- Signup Redirect -->
+        <div class="text-center mt-3">
+          <span class="small">Don’t have an account? 
+            <a href="#" data-bs-toggle="modal" data-bs-target="#signUp-modal" class="text-success fw-semibold">Sign up</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- FOOTER -->
+<footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container">
+    <div class="row">
+
+      <!-- About Section -->
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold mb-3">About Clean City</h5>
+        <p class="mb-2" style="font-size: 14px; line-height: 1.6;">
+          Clean City is a modern waste management tracker helping communities and individuals
+          reduce waste and recycle responsibly. Join us in creating a cleaner, greener future.
+        </p>
+        <div class="d-flex gap-3 mt-3">
+          <a href="#" class="text-white fs-5"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white fs-5"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white fs-5"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white fs-5"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold mb-3">Quick Links</h5>
+        <ul class="list-unstyled" style="font-size: 14px;">
+          <li class="mb-2"><a href="./home.html" class="text-white text-decoration-none">Home</a></li>
+          <li class="mb-2"><a href="./waste.html" class="text-white text-decoration-none">Waste Categories</a></li>
+          <li class="mb-2"><a href="./tracker.html" class="text-white text-decoration-none">Recycling Tracker</a></li>
+          <li class="mb-2"><a href="./pledge.html" class="text-white text-decoration-none">Pledge</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact / Newsletter -->
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold mb-3">Contact & Subscribe</h5>
+        <p class="mb-2" style="font-size: 14px;">Subscribe to our newsletter for updates and tips.</p>
+        <form class="d-flex mb-3">
+          <input type="email" class="form-control me-2" placeholder="Email Address" style="font-size: 14px;">
+          <button type="submit" class="btn btn-success">Subscribe</button>
+        </form>
+        <p class="mb-1" style="font-size: 14px;"><i class="fas fa-map-marker-alt me-2"></i>123 Green Street, Lagos, Nigeria</p>
+        <p class="mb-1" style="font-size: 14px;"><i class="fas fa-phone me-2"></i>+234 801 234 5678</p>
+        <p style="font-size: 14px;"><i class="fas fa-envelope me-2"></i>info@cleancity.com</p>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="text-center pt-3 mt-3 border-top" style="font-size: 13px;">
+      &copy; 2025 Clean City. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+ <script src="waste.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
